@@ -5,15 +5,18 @@ archivesBaseName="Todo List"
 version="1.0"
 
 mainClassName="App"
+applicationName = "TodoList"
 
 
 repositories{
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies{
-	compile group:'com.sparkjava',name:'spark-core',version:'2.3'
-	testCompile group:'junit',name:'junit',version:'4.+'
-	compile group: 'org.apache.velocity',name:'velocity',version:'1.7'
+    compile group:'com.sparkjava',name:'spark-core',version:'2.3'
+    testCompile group:'junit',name:'junit',version:'4.+'
+    compile group: 'org.apache.velocity',name:'velocity',version:'1.7'
 
 }
+defaultTasks = ['clean']
+task stage(dependsOn: ['clean', 'installApp'])
